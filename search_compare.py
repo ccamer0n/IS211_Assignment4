@@ -14,6 +14,7 @@ def get_me_random_list(n):
 
 
 def sequential_search(a_list, item):
+    """Sequential search that calculates its run time."""
     start = time.time()
     pos = 0
     found = False
@@ -27,6 +28,7 @@ def sequential_search(a_list, item):
 
 
 def ordered_sequential_search(a_list, item):
+    """Ordered sequential search that calculates its run time."""
     start = time.time()
     pos = 0
     found = False
@@ -44,6 +46,7 @@ def ordered_sequential_search(a_list, item):
 
 
 def binary_search_iterative(a_list,item):
+    """Iterative binary search that calculates its run time."""
     start = time.time()
     first = 0
     last = len(a_list) - 1
@@ -62,6 +65,7 @@ def binary_search_iterative(a_list,item):
     
     
 def binary_search_recursive(a_list,item):
+    """Recursive binary search that calculates its run time."""
     start = time.time()
     if len(a_list) == 0:
         return False
@@ -77,12 +81,15 @@ def binary_search_recursive(a_list,item):
                 end = time.time()
                 return binary_search_recursive(a_list[midpoint + 1:], item), (end - start)
 def main():
+    """Compares run times for search algorithms using random lists of varying sizes.
+    Prints the average time each function takes to complete."""
     the_size = 500
     total_time_seq = 0
     total_time_ord_seq = 0
     total_time_bin_iter = 0
     total_time_bin_rec = 0
     proceed = True
+    #While loop proceeds until a list size of 10000 is tested.
     while proceed:
         for i in range(100):
             mylist = get_me_random_list(the_size)
@@ -93,11 +100,12 @@ def main():
             ord_seq_ret = ordered_sequential_search(mylist, -1)
             bin_iter_ret = binary_search_iterative(mylist, -1)
             bin_rec_ret = binary_search_recursive(mylist, -1)
-
+            #increment total times for each function.
             total_time_seq += seq_return[1]
             total_time_ord_seq += ord_seq_ret[1]
             total_time_bin_iter += bin_iter_ret[1]
             total_time_bin_rec += bin_rec_ret[1]
+            #calculate average times for each function.
             avg_time_seq = total_time_seq / 100
             avg_time_ord_seq = total_time_ord_seq / 100
             avg_time_bin_iter = total_time_bin_iter / 100
