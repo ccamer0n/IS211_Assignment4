@@ -110,23 +110,15 @@ def main():
             avg_time_ord_seq = total_time_ord_seq / 100
             avg_time_bin_iter = total_time_bin_iter / 100
             avg_time_bin_rec = total_time_bin_rec / 100
+        print(f"Sequential Search took {avg_time_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
+        print(f"Ordered Sequential Search Iterative took {avg_time_ord_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
+        print(f"Binary Search Iterative took {avg_time_bin_iter:10.7f} seconds to run, on average for a list of {the_size} elements.")
+        print(f"Binary Search Recursive took {avg_time_bin_rec:10.7f} seconds to run, on average for a list of {the_size} elements.\n")
         if the_size == 500:
-            print(f"Sequential Search took {avg_time_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Ordered Sequential Search Iterative took {avg_time_ord_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Binary Search Iterative took {avg_time_bin_iter:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Binary Search Recursive took {avg_time_bin_rec:10.7f} seconds to run, on average for a list of {the_size} elements.")
             the_size = 1000
         elif the_size == 1000:
-            print(f"\nSequential Search took {avg_time_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Ordered Sequential Search Iterative took {avg_time_ord_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Binary Search Iterative took {avg_time_bin_iter:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Binary Search Recursive took {avg_time_bin_rec:10.7f} seconds to run, on average for a list of {the_size} elements.")
             the_size = 10000
         else:
-            print(f"\nSequential Search took {avg_time_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Ordered Sequential Search Iterative took {avg_time_ord_seq:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Binary Search Iterative took {avg_time_bin_iter:10.7f} seconds to run, on average for a list of {the_size} elements.")
-            print(f"Binary Search Recursive took {avg_time_bin_rec:10.7f} seconds to run, on average for a list of {the_size} elements.")
             proceed = False
 
 if __name__ == "__main__":
